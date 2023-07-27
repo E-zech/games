@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap");
+
+html {
+  min-height: 100%;
+}
+
+body {
+  direction: rtl;
+  padding-bottom: 200px;
+  background: rgb(66, 173, 26);
+  background: linear-gradient(
+    172deg,
+    rgba(66, 173, 26, 1) 5%,
+    rgba(212, 212, 212, 1) 43%,
+    rgba(66, 173, 26, 1) 94%
+  );
+}
+
+* {
+  font-family: "Rubik", sans-serif !important;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 2.7rem;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 97vw;
+  background-color: #ffffff00;
+  margin: 0 auto;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.scoreBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  direction: ltr;
+  width: 35vw;
+  border: 3px dotted black;
+  margin: 5px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.scoreBoard > button {
+  background-color: black;
+  color: wheat;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 5px;
+  letter-spacing: 0.1em;
+}
+
+.scoreBoard > button:hover {
+  cursor: pointer;
+  scale: 1.02;
+  background-color: rgba(4, 27, 4, 0.788);
+}
+
+.gap {
+  margin-top: -20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: wheat;
+}
+
+.levels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff00;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.button {
+  font-size: 1rem;
+  border: none;
+  background-color: #000;
+  color: wheat;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.button:hover {
+  background-color: rgba(165, 165, 165, 0.808);
+  cursor: pointer;
+}
+
+.board {
+  display: inline-grid;
+  border-radius: 3px;
+  border: 4px solid;
+  overflow: hidden;
+  background-color: #4bc52fcc;
+  margin-left: 1.5rem;
+}
+
+.board div {
+  width: 15px;
+  height: 15px;
+}
+
+.snake {
+  background-color: #000000;
+}
+.head {
+  background: rgb(240, 0, 0);
+}
+.head.up {
+  border-radius: 6px 6px 0 0;
+}
+
+.head.right {
+  border-radius: 0 6px 6px 0;
+}
+
+.head.down {
+  border-radius: 0 0 6px 6px;
+}
+
+.head.left {
+  border-radius: 6px 0 0 6px;
+}
+
+.blueberry::after {
+  content: "🐭";
+  position: relative;
+  top: -5px;
+  right: -3px;
+  font-size: 15px;
+}
+
+.container {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameStart {
+  display: block;
+  position: absolute;
+  width: 80vw;
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.925);
+  color: wheat;
+  top: 25vh;
+  left: 10vw;
+  z-index: 99;
+  border-radius: 615px;
+  padding: 15px;
+}
+.gameOver {
+  display: none;
+  position: absolute;
+  width: 80vw;
+  height: 40vh;
+  background-color: rgb(0, 0, 0, 0.85);
+  color: wheat;
+  top: 25vh;
+  left: 10vw;
+  z-index: 99;
+  border-radius: 615px;
+}
+
+.gameOverTxt,
+.gameStartTxt {
+  position: relative;
+  text-align: center;
+  font-size: 2.9rem;
+  font-family: monospace;
+  transform: scale(1.2);
+  transition: all 1s ease-in-out;
+}
+
+.gameStartBtn,
+.gameOverBtn {
+  font-size: 1.1rem;
+  border-radius: 15px;
+  background-color: #000;
+  color: wheat;
+  border: 2px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.gameStartBtn:hover,
+.gameOverBtn:hover {
+  background-color: rgba(247, 232, 202, 0.418);
+}
+
+@media screen and (max-width: 900px) {
+  .scoreBoard {
+    width: 37vw;
+    margin: 5px;
+    padding: 4px;
+  }
+  .scoreBoard > button {
+    padding: 5px;
+  }
+  h1 {
+    margin-left: 50px;
+  }
+  .levels {
+    margin-left: 70px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .gameStart,
+  .gameOver {
+    left: 6vw;
+  }
+  h1 {
+    margin-left: 100px;
+  }
+  .levels {
+    margin-left: 130px;
+  }
+  .scoreBoard {
+    width: 40vw;
+    margin: 3px;
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .board div {
+    width: 2.5vw;
+    height: 2vh;
+  }
+  .gameStart,
+  .gameOver {
+    border-radius: 15%;
+    padding: 20px;
+    left: 3vw;
+  }
+  .scoreBoard {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    margin-top: 20px;
+  }
+  .board div {
+    width: 2.5vw;
+    height: 1.5vh;
+  }
+
+  .board {
+    margin-left: 20px;
+  }
+
+  .blueberry::after {
+    content: "🐭";
+    position: relative;
+    top: -5px;
+    right: -3px;
+    font-size: 12px;
+  }
+
+  .gameStartTxt,
+  .gameOverTxt {
+    font-size: 2rem;
+  }
+
+  .gameStart,
+  .gameOver {
+    left: 2vw;
+  }
+
+  .gameOverBtn {
+    margin-top: 6vh;
+  }
+
+  .scoreBoard {
+    text-align: center;
+    width: 29vw;
+    margin: 1px;
+  }
+
+  .scoreBoard > button {
+    padding: 4px;
+  }
+}

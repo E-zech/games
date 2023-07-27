@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;700;900&display=swap");
+
+html {
+  min-height: 100%;
+}
+
+body {
+  direction: ltr;
+  padding-bottom: 200px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(32, 130, 246, 1) 100%
+  );
+}
+
+* {
+  font-family: "Rubik", sans-serif !important;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin: 16px;
+}
+
+.frame {
+  text-align: center;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97vw;
+}
+
+button {
+  background-color: #5f39a3;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #8940b3;
+  cursor: pointer;
+}
+
+.board {
+  display: inline-grid;
+  overflow: hidden;
+  background-color: #d7d8ef;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  direction: ltr;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.activeBoard {
+  opacity: 1;
+}
+
+.board div {
+  width: 90px;
+  height: 90px;
+  background-color: #6dd53b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: inset 0px 0px 8px black;
+  cursor: pointer;
+}
+
+.board div .hide {
+  display: none;
+  pointer-events: none;
+}
+
+.board div.showing {
+  background: #e26000;
+  transform: matrix3d(1, 0, 4, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.board div.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.board div.showing span {
+  display: initial;
+}
+.boardSize {
+  display: none;
+}
+.small {
+  height: 28px;
+  padding: 5px;
+}
+.large {
+  height: 35px;
+}
+.active {
+  background-color: #5919c7 !important;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+.winner {
+  font-size: 80px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoom-in 2s;
+}
+
+p {
+  text-align: center;
+  color: white;
+}
+
+p .margin {
+  margin: 0 12px;
+}
+
+/* .cheat {
+  filter: brightness(0.7);
+} */
+/*  only for coding purposes. */
+
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.players {
+  text-align: center;
+  width: 100px;
+  background-color: #e6fbe59d;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.myTurn {
+  font-weight: 600;
+  background-color: #8ef079;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in;
+}
+
+#winningDiv {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: 0 auto;
+  width: 60vw;
+  height: 40vh;
+  text-align: center;
+  background-color: #9d04f85c;
+  color: #ecd0f8;
+  font-size: 5rem;
+  border-radius: 15px;
+  padding: 5px;
+  top: 142px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .wrap {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+  }
+  .board div {
+    width: 14vw;
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .board div {
+    width: 13vw;
+    height: 8vh;
+  }
+}

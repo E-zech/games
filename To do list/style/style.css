@@ -1,0 +1,213 @@
+body {
+  direction: ltr;
+  font-family: sans-serif;
+
+  background: rgb(255, 212, 2);
+  background: radial-gradient(
+    circle,
+    rgba(255, 212, 2, 0.61) 12%,
+    rgba(253, 187, 45, 1) 90%
+  );
+}
+
+h1 {
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3em;
+}
+.To {
+  color: #7b4609;
+}
+.Do {
+  color: #251876;
+}
+.List {
+  color: #63106d;
+}
+
+#wrap {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+input {
+  font-weight: bold;
+  color: black;
+  border-color: chocolate;
+  background-color: #00000000;
+  font-size: 2rem;
+  padding: 9px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.btn {
+  font-size: 1.2rem;
+  color: #ffe564;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  padding: 6px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.btn:nth-child(1) {
+  background-color: #7b4609;
+}
+.btn:nth-child(2) {
+  background-color: #251876;
+}
+.btn:nth-child(3) {
+  background-color: #63106d;
+}
+
+.btn:hover {
+  background-color: rgb(47, 69, 50);
+  cursor: pointer;
+  scale: 1.1;
+}
+
+#containerMissions {
+  width: 85vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 15px;
+  gap: 10px;
+  box-sizing: border-box;
+  background-color: #faff6200;
+}
+
+#containerMissions > div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 7px;
+  background-color: #ffad12;
+  text-align: center;
+}
+
+#containerMissions > div:hover {
+  cursor: text;
+  transform: scale(1.02);
+  transition: all 0.5 ease-in-out;
+}
+
+#containerMissions > div > .spancounter {
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
+  border: none;
+}
+
+#containerMissions > div > span {
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: bold;
+  border: 4px double chocolate;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: black;
+  padding: 4px;
+}
+
+.divBtns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.divBtns > button {
+  background-color: transparent;
+  border: none;
+  font-size: 23px;
+}
+.divBtns > button:hover {
+  scale: 1.2;
+}
+
+.fade {
+  animation-name: fadeOutAndScale;
+  animation-duration: 0.5s; /* Adjust the duration as needed */
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeOutAndScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2); /* Adjust the scale factor as needed */
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #containerMissions {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #containerMissions {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+
+  input {
+    font-size: 1.6rem;
+  }
+
+  #wrapBtns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 11px;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    padding: 8px;
+    margin: 1px;
+    width: 57vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  input {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  input {
+    font-size: 1.4rem;
+  }
+  .btn {
+    font-size: 1.3rem;
+    padding: 2px;
+    margin: 1px;
+    width: 52vw;
+  }
+}

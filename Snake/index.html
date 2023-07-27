@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Snake</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script/script.js" defer></script>
+</head>
+
+<body onload="createBoard()">
+    <h1>Snake</h1>
+
+    <div class="scoreBoard">
+        <h2>Score:</h2>
+        <p id="score" class="gap"></p>
+        <h2>Best record:</h2>
+        <p id="record" class="gap"></p>
+        <button onclick="clearLocalS()">Clear Record</button>
+    </div>
+
+    <div class="frame">
+        <div class="levels" dir="ltr">
+            <button class="btn1 button" onclick="easy()">easy</button>
+            <button class="btn2 button" onclick="medium()">medium</button>
+            <button class="btn3 button" onclick="hard()">hard</button>
+        </div>
+        <br><br><br><br><br><br>
+        <div class="container">
+            <div class="gameStart">
+                <h2 class="gameStartTxt">Instructions</h2>
+                <p>
+                    <b>1.</b>&nbsp; Press "Esc" To Puase The Game.<br><br>
+                    <b>2.</b>&nbsp; Choose Difficulty : Easy, Medium, Hard.<br><br>
+                    <b>3.</b>&nbsp; Pressing Double click will rush the snake faster.
+
+                </p>
+                <button class="gameStartBtn" onclick="iAgree()">I Understand</button>
+            </div>
+            <div class="gameOver">
+                <h2 class="gameOverTxt">Game Over</h2>
+                <button class="gameOverBtn" onclick="restart()">Play again</button>
+            </div>
+        </div>
+        <div class="board">
+        </div>
+    </div>
+
+</body>
+
+</html>

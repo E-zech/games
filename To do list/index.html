@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To Do List </title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/writeMissionOnScreen.js"></script>
+    <script src="script/saveInLocalStorage.js"></script>
+    <script defer src="script/loadFromLocalStorage.js"></script>
+</head>
+
+<body>
+    <h1>
+        <span class="To"> To </span>
+        <span class="Do">Do</span>
+        <span class="List">List</span>
+    </h1>
+
+    <div id="wrap">
+        <input autocomplete="off" type="text" id="txtMission" placeholder="Write Here..."
+            onkeydown="writeMissionOnScreen(event)">
+        <br><br>
+        <div id="wrapBtns">
+            <button class="btn" onclick="saveInLocalStorage()"> Save Permanent</button>
+            <button class="btn" onclick="resetAllMissions()">Clear Temporary </button>
+            <button class="btn" onclick="deleteLocalStorage()">Clear Permanent</button>
+        </div>
+        <br>
+
+        <div id="containerMissions"></div>
+    </div>
+
+    <script>
+        let counter = 1;
+    </script>
+</body>
+
+</html>
